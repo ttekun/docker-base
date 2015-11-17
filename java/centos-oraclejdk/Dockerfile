@@ -6,11 +6,11 @@
 FROM ttekun/centos5
 
 # Define JDK variables
+END JDK_HOME /home/opt/jdk_1.8.0_65
 ENV JDK_VERSION 8u65
 ENV JDK_BUILD_NO b17
 ENV JDK_RPM jdk-${JDK_VERSION}-linux-x64.rpm
 ENV JDK_PREFIX /home/opt
-END JDK_HOME /home/opt/jdk_1.8.0_65
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /home/opt/jdk
