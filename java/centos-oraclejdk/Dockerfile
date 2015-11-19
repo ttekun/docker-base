@@ -4,7 +4,7 @@
 
 # Pull base image.
 FROM ttekun/centos5
-MAINTAINER Tacksang Kim tacksangkim@gmail.com
+MAINTAINER tacksangkim@gmail.com
 
 # Define JDK variables
 END JDK_HOME /home/opt/jdk_1.8.0_65
