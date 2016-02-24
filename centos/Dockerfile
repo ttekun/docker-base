@@ -6,8 +6,8 @@
 FROM centos:7
 MAINTAINER tacksangkim@gmail.com
 
-RUN yum -y update && yum clean all && \
-	yum -y install sudo zip unzip passwd chpasswd wget curl openssh openssh-server openssh-clients && \
+RUN yum -y update && \
+	yum -y install sudo zip unzip passwd chpasswd wget curl && \
 	yum clean all
 
 # root:root
@@ -20,7 +20,5 @@ RUN echo 'root:root' | chpasswd && \
 	echo "dev    ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers.d/dev && \
 	chmod 440 /etc/sudoers.d/dev
 
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
-	sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
-
-CMD ["bash"]
+EXPOSE 22
+ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
