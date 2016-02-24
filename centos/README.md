@@ -2,7 +2,7 @@
 
 ## Base Docker Image
 
-- [centos official docker image](https://hub.docker.com/r/_/centos/)
+[centos official docker image](https://hub.docker.com/r/_/centos/)
 
 ## Install tools
 
@@ -49,3 +49,7 @@ $ docker build -t REPOSITORY[:TAG] .
     ``` bash
     $ docker exec -i -t centos7 bash
     ```
+
+## You can pull docker image from dockerhub
+
+[Check docker images](https://hub.docker.com/r/ttekun/centos/)
