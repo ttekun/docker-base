@@ -1,11 +1,11 @@
-# Oracle Java Dockerfile
-This repository contains **Dockerfile** of [Java](https://www.java.com/).
+# Dockerfile for Oracle Java
 
 ## Base Docker Image
-- [ttekun/centos7](https://hub.docker.com/r/ttekun/centos7/)
+
+- [ttekun/centos](https://hub.docker.com/r/ttekun/centos/)
 
 ## Usage
 
-```
-$docker build -t [tagname] .
+``` bash
+$ docker build -t [IMAGE ID] [TAG] .
 ```

@@ -1,7 +1,7 @@
 # https://docs.docker.com/engine/reference/builder/
 # http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-FROM ttekun/centos7
+FROM ttekun/centos:7
 MAINTAINER tacksangkim@gmail.com
 
 RUN mkdir /home/opt && \
@@ -16,4 +16,5 @@ RUN mkdir /home/opt && \
 ENV JAVA_HOME /home/opt/jdk
 ENV PATH $JAVA_HOME/bin:$PATH
 
-CMD ["bash"]
+EXPOSE 22
+ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
