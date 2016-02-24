@@ -19,6 +19,3 @@ RUN echo 'root:root' | chpasswd && \
 	chmod 755 /etc/sudoers.d && \
 	echo "dev    ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers.d/dev && \
 	chmod 440 /etc/sudoers.d/dev
-
-EXPOSE 22
-ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]

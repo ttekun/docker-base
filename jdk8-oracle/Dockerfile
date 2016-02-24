@@ -15,6 +15,3 @@ RUN mkdir /home/opt && \
 
 ENV JAVA_HOME /home/opt/jdk
 ENV PATH $JAVA_HOME/bin:$PATH
-
-EXPOSE 22
-ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
