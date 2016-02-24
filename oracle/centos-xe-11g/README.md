@@ -14,6 +14,6 @@ docker run -it ttekun/centos5-oraclexe11g /bin/bash
 ## Start and Stop
 
 ```
-$ /usr/sbin/oracle-xe-startup.sh
-$ service oracle-xe stop
+$/usr/sbin/oracle-xe-startup.sh
+$service oracle-xe stop
 ```

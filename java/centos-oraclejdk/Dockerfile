@@ -1,30 +1,19 @@
-#
-# Oracle Java 8 Dockerfile
-#
+# https://docs.docker.com/engine/reference/builder/
+# http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-# Pull base image.
-FROM ttekun/centos5
+FROM ttekun/centos7
 MAINTAINER tacksangkim@gmail.com
 
-# Define JDK variables
-END JDK_HOME /home/opt/jdk_1.8.0_65
-ENV JDK_VERSION 8u65
-ENV JDK_BUILD_NO b17
-ENV JDK_RPM jdk-${JDK_VERSION}-linux-x64.rpm
-ENV JDK_PREFIX /home/opt
-
-# Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /home/opt/jdk
-
-# Install Java.
-RUN mkdir ${JDK_PREFIX} && \
+RUN mkdir /home/opt && \
   wget -q \
   --no-check-certificate \
   --no-cookies \
   --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-  http://download.oracle.com/otn-pub/java/jdk/${JDK_VERSION}-${JDK_BUILD_NO}/${JDK_RPM} -O ${JDK_RPM} && \
-  rpm -ivh --prefix=${JDK_PREFIX} ${JDK_RPM} && \
-  ln -s ${JDK_HOME} ${JAVA_HOME}
+  http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.rpm -O jdk-8u66-linux-x64.rpm && \
+  rpm -ivh --prefix=/home/opt jdk-8u66-linux-x64.rpm && \
+  ln -s /home/opt/jdk_1.8.0_66 ${JAVA_HOME}
 
-# Define default command.
+ENV JAVA_HOME /home/opt/jdk
+ENV PATH $JAVA_HOME/bin:$PATH
+
 CMD ["bash"]
