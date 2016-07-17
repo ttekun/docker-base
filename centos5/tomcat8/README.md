@@ -16,7 +16,7 @@ Private dockerfile, used set up a buid environment.
 2. docker build
 
     ``` bash
-    docker build -t ttekun/centos5-oraclejdk8-tomcat:8 .
+    $ docker build -t ttekun/centos5-oraclejdk8-tomcat:8 .
     ```
 
 3. docker run
